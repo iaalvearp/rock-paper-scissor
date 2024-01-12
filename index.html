@@ -3,8 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
     <title>Rock - Paper - Scissor</title>
-    <link rel="stylesheet" href="normalize.css" />
+    <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon" />
     <link rel="stylesheet" href="main.css" />
   </head>
   <body>
@@ -30,12 +31,12 @@
       </div>
       <div class="user-options">
         <div class="rock box">
-          <a href="#" id="user-rock" class="btn rock">
+          <button href="#" id="user-rock" class="btn rock">
             <svg
               width="40"
               height="40"
               viewBox="0 0 24 24"
-              stroke-width="2"
+              stroke-width="1"
               stroke="currentColor"
               fill="none"
               stroke-linecap="round"
@@ -50,15 +51,15 @@
               />
             </svg>
             Rock
-          </a>
+          </button>
         </div>
         <div class="paper box">
-          <a href="#" id="user-paper" class="btn paper">
+          <button href="#" id="user-paper" class="btn paper">
             <svg
               width="40"
               height="40"
               viewBox="0 0 24 24"
-              stroke-width="2"
+              stroke-width="1"
               stroke="currentColor"
               fill="none"
               stroke-linecap="round"
@@ -73,15 +74,15 @@
               />
             </svg>
             Paper
-          </a>
+          </button>
         </div>
         <div class="scissor box">
-          <a href="#" id="user-scissor" class="btn scissor">
+          <button href="#" id="user-scissor" class="btn scissor">
             <svg
               width="40"
               height="40"
               viewBox="0 0 24 24"
-              stroke-width="2"
+              stroke-width="1"
               stroke="currentColor"
               fill="none"
               stroke-linecap="round"
@@ -96,12 +97,15 @@
               <path d="M11 5.5v-2a1.5 1.5 0 1 1 3 0v8.5" />
             </svg>
             Scissor
-          </a>
+          </button>
         </div>
-        <section class="modal">
-          <div class="modal-container"></div>
-        </section>
       </div>
+      <section id="modalBg" class="modalBg">
+        <div id="modal" class="modal">
+          <span id="modal-result-pic"> 😁 </span>
+          <p id="modal-result-text">Ganaste!!!</p>
+        </div>
+      </section>
     </main>
     <script src="index.js"></script>
   </body>

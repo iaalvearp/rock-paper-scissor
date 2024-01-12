@@ -3,41 +3,43 @@
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
-  background-color: #111;
-  color: #eee;
+  color-scheme: light dark;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+  background-color: #333;
 }
 
 main {
   display: grid;
-  justify-content: center;
-  grid-template-rows: 1fr max-content max-content max-content 1fr;
+  place-content: center;
+  grid-template-rows: max-content max-content max-content;
   height: 100%;
   min-height: 100vh;
   width: 90%;
   margin: 0 auto;
   overflow: hidden;
+  gap: 1rem;
 }
 h1 {
-  grid-row: 2/3;
   text-align: center;
   vertical-align: middle;
+  font-size: 2rem;
 }
 .game-container {
-  grid-row: 3/4;
   gap: 1rem;
   display: grid;
   justify-content: center;
 }
 .user-options {
   grid-column: 1/2;
-  grid-row: 4/5;
 }
 .choice {
   min-width: 7.5rem;
-  max-width: 12.5rem;
-  min-height: 150px;
-  max-height: 12.5rem;
+  max-width: 11.25rem;
+  min-height: 7.5rem;
+  max-height: 11.25rem;
   overflow: hidden;
   border-radius: 0.5rem;
   display: grid;
@@ -46,11 +48,10 @@ h1 {
 }
 
 img {
-  height: 12.5rem;
+  height: 11.25rem;
   width: auto;
   grid-row: 1/2;
   grid-column: 1/2;
-  object-fit: cover;
   object-position: center;
 }
 
@@ -75,30 +76,50 @@ img {
   gap: 0.25rem;
   font-size: 1.25rem;
   justify-items: center;
-  border: #111 0.125rem solid;
+  border: currentColor 0.125rem solid;
   border-radius: 0.5rem;
   transform: scale(1);
   transition: 400ms;
+  color: currentColor;
+  opacity: 0.4;
+  background: none;
 }
 
-.btn:hover {
-  border: #eee 0.125rem solid;
+.user-options .btn:hover {
+  opacity: 1;
+  border: currentColor 0.125rem solid;
+  background: #ffffff33;
+  cursor: pointer;
 }
 .btn:active {
   transform: scale(0.9);
 }
 
-.modal {
+#modalBg {
+  height: 95vh;
+  width: 95vw;
   position: absolute;
-  grid-row: 4/5;
-  grid-column: 1/2;
-  transform: scale(1);
+  margin: auto;
   z-index: 1;
-  background-color: #eee;
-  border-radius: 0.5rem;
-  max-height: 5rem;
-  height: 100%;
-  max-width: 18.75rem;
-  width: 100%;
-  overflow: hidden;
+  background: #ffffff33;
+  backdrop-filter: blur(5px);
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+  scale: 0;
+}
+
+#modal {
+  border-radius: 1rem;
+  background: #00000033;
+  display: flex;
+}
+
+#modal-result-text,
+#modal-result-pic {
+  font-size: 3rem;
+  cursor: default;
+  padding: 2rem 1rem;
 }
